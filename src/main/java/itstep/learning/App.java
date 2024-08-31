@@ -2,8 +2,11 @@ package itstep.learning;
 
 import com.google.inject.Guice;
 import itstep.learning.Db.DbDemo;
+import itstep.learning.Db.DbDemoLogerTime;
+import itstep.learning.fs.FileDemo;
 import itstep.learning.generators.GenCryptoSalt;
 import itstep.learning.generators.GeneratorDemo;
+import itstep.learning.ioc.DbLoggerTimeModule;
 import itstep.learning.ioc.DbModule;
 import itstep.learning.generators.GeneratorsModule;
 import itstep.learning.ioc.IocDemo;
@@ -37,6 +40,17 @@ public class App
         System.out.println("CryptoSalt = " + Guice.createInjector(new GeneratorsModule()).getInstance(GeneratorDemo.class).generateCryptoSalt());
         System.out.println("_____________________________________________________________________________________________________");
         System.out.println("FileName = " + Guice.createInjector(new GeneratorsModule()).getInstance(GeneratorDemo.class).generateFileName());
+
+
+        System.out.println("_____________________________________________________________________________________________________");
+        Guice.createInjector(new GeneratorsModule()).getInstance(FileDemo.class).run();
+        System.out.println("_____________________________________________________________________________________________________");
+        System.out.println("_____________________________________________________________________________________________________");
+        Guice.createInjector(new GeneratorsModule()).getInstance(FileDemo.class).runFile();
+
+        System.out.println("_____________________________________________________________________________________________________");
+        Guice.createInjector(new DbLoggerTimeModule()).getInstance(DbDemoLogerTime.class).run();
+
 
     }
 }
