@@ -3,8 +3,7 @@ package itstep.learning.Db;
 import com.google.inject.Inject;
 
 import java.sql.*;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+
 
 public class DbDemo {
     @Inject

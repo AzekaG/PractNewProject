@@ -14,6 +14,8 @@ public class DbDemoLogerTime {
 
     public void run()
     {
+
+        System.out.println("Hello DB MODULE");
         DbLoggingTime();
         DbReadingTime();
     }
@@ -21,7 +23,7 @@ public class DbDemoLogerTime {
 
     public  void DbLoggingTime()
     {
-        String query = "INSERT INTO loggindateandtime (idloggindateandtime) VALUES(?)";
+        String query = "INSERT INTO LoggingDateTime (log_time) VALUES(?)";
 
         try
         {
@@ -53,12 +55,14 @@ public class DbDemoLogerTime {
         {
             Statement stmt = connection.createStatement();
 
-            ResultSet res = stmt.executeQuery("SELECT * FROM java_pv222.loggindateandtime");
+            ResultSet res = stmt.executeQuery("SELECT * FROM java_pv222.LoggingDateTime");
 
             while(res.next())
             {
-                System.out.println("DATABASE");
-                System.out.println(res.getString(1));
+                int id = res.getInt("id");
+                String logTime = res.getString("log_time");
+                System.out.println("ID: " + id + ", Log Time: " + logTime);
+
             }
             res.close();
             stmt.close();
