@@ -21,6 +21,26 @@ public class App
     public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
+
+
+        boolean showJournal = false;
+        for(String arg : args)
+        {
+            if("--journal".equals(arg))
+            {
+                showJournal = true;
+            }
+        }
+
+        if(showJournal)
+        {
+            System.out.println("Журнал запуска:");
+            System.out.println("_____________________________________________________________________________________________________");
+            Guice.createInjector(new DbLoggerTimeModule()).getInstance(DbDemoLogerTime.class).DbReadingTime();
+            return;
+        }
+
+
 //        new Basics().run();
 //
 //        new Shop().run();
