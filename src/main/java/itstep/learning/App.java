@@ -12,6 +12,8 @@ import itstep.learning.generators.GeneratorsModule;
 import itstep.learning.ioc.IocDemo;
 import itstep.learning.ioc.ServicesModule;
 
+import java.util.Map;
+
 /**
  * Hello world!
  *
@@ -52,24 +54,53 @@ public class App
 
        // Guice.createInjector(new DbModule()).getInstance(DbDemo.class).run();
 
+//        System.out.println("_____________________________________________________________________________________________________");
+//        System.out.println("OTP = " + Guice.createInjector(new GeneratorsModule()).getInstance(GeneratorDemo.class).generateOTP());
+//        System.out.println("_____________________________________________________________________________________________________");
+//        System.out.println("Password = " + Guice.createInjector(new GeneratorsModule()).getInstance(GeneratorDemo.class).generatePassword());
+//        System.out.println("_____________________________________________________________________________________________________");
+//        System.out.println("CryptoSalt = " + Guice.createInjector(new GeneratorsModule()).getInstance(GeneratorDemo.class).generateCryptoSalt());
+//        System.out.println("_____________________________________________________________________________________________________");
+//        System.out.println("FileName = " + Guice.createInjector(new GeneratorsModule()).getInstance(GeneratorDemo.class).generateFileName());
+
+//
+//        System.out.println("_____________________________________________________________________________________________________");
+//        Guice.createInjector(new GeneratorsModule()).getInstance(FileDemo.class).run();
+//        System.out.println("_____________________________________________________________________________________________________");
+//        System.out.println("_____________________________________________________________________________________________________");
+//        Guice.createInjector(new GeneratorsModule()).getInstance(FileDemo.class).runFile();
+//
+
+
+//        System.out.println("_____________________________________________________________________________________________________");
+//        Guice.createInjector(new DbLoggerTimeModule()).getInstance(DbDemoLogerTime.class).run();
+//
+//
+
+
+        System.out.println(Guice.createInjector(new ServicesModule()).getInstance(GenCryptoSalt.class));
         System.out.println("_____________________________________________________________________________________________________");
-        System.out.println("OTP = " + Guice.createInjector(new GeneratorsModule()).getInstance(GeneratorDemo.class).generateOTP());
-        System.out.println("_____________________________________________________________________________________________________");
-        System.out.println("Password = " + Guice.createInjector(new GeneratorsModule()).getInstance(GeneratorDemo.class).generatePassword());
-        System.out.println("_____________________________________________________________________________________________________");
-        System.out.println("CryptoSalt = " + Guice.createInjector(new GeneratorsModule()).getInstance(GeneratorDemo.class).generateCryptoSalt());
-        System.out.println("_____________________________________________________________________________________________________");
-        System.out.println("FileName = " + Guice.createInjector(new GeneratorsModule()).getInstance(GeneratorDemo.class).generateFileName());
+
+
+
+        Map<String, String> mp = Guice.createInjector(new ServicesModule()).getInstance(FileDemo.class).connectionMap();
+
+        for(Map.Entry<String, String> entry : mp.entrySet())
+        {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
 
 
         System.out.println("_____________________________________________________________________________________________________");
-        Guice.createInjector(new GeneratorsModule()).getInstance(FileDemo.class).run();
-        System.out.println("_____________________________________________________________________________________________________");
-        System.out.println("_____________________________________________________________________________________________________");
-        Guice.createInjector(new GeneratorsModule()).getInstance(FileDemo.class).runFile();
 
         System.out.println("_____________________________________________________________________________________________________");
-        Guice.createInjector(new DbLoggerTimeModule()).getInstance(DbDemoLogerTime.class).run();
+        Guice.createInjector(new DbModule(new FileDemo())).getInstance(FileDemo.class);
+        Guice.createInjector(new DbModule(new FileDemo()), new ServicesModule()).getInstance(DbDemo.class).run();
+        Guice.createInjector(new DbModule(new FileDemo()), new ServicesModule()).getInstance(DbDemo.class);
+
+
+        System.out.println("_____________________________________________________________________________________________________");
+        Guice.createInjector(new GeneratorsModule()).getInstance(FileDemo.class).rewriteDataTiDBIni("dbms" , "localhost" , "3306" , "java_pv222" , "user222", "pass222");
 
 
     }

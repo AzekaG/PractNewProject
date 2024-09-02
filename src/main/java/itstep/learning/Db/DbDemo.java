@@ -6,6 +6,7 @@ import java.sql.*;
 
 
 public class DbDemo {
+
     @Inject
     private Connection connection;
 
@@ -15,9 +16,7 @@ public class DbDemo {
         try{
             Statement statement = connection.createStatement();
 
-            ResultSet res = statement.executeQuery("SELECT * FROM user_222 ");
-
-
+            ResultSet res = statement.executeQuery("SHOW DATABASES");
 
             while(res.next())
             {
@@ -28,7 +27,7 @@ public class DbDemo {
 
         }
         catch(SQLException e){
-            System.out.println(e.getMessage());
+            System.out.println( "DbDemo  :  Method run : "  +  e.getMessage());
         }
     }
 
