@@ -1,6 +1,7 @@
 package itstep.learning;
 
 import com.google.inject.Guice;
+import itstep.learning.Async.AsyncDemo;
 import itstep.learning.Db.DbDemo;
 import itstep.learning.Db.DbDemoLogerTime;
 import itstep.learning.fs.FileDemo;
@@ -76,32 +77,34 @@ public class App
 //        Guice.createInjector(new DbLoggerTimeModule()).getInstance(DbDemoLogerTime.class).run();
 //
 //
+//
+//
+//        System.out.println(Guice.createInjector(new ServicesModule()).getInstance(GenCryptoSalt.class));
+//        System.out.println("_____________________________________________________________________________________________________");
+//
+//
+//
+//        Map<String, String> mp = Guice.createInjector(new ServicesModule()).getInstance(FileDemo.class).connectionMap();
+//
+//        for(Map.Entry<String, String> entry : mp.entrySet())
+//        {
+//            System.out.println(entry.getKey() + ": " + entry.getValue());
+//        }
+//
+//
+//        System.out.println("_____________________________________________________________________________________________________");
+//
+//        System.out.println("_____________________________________________________________________________________________________");
+//        FileDemo fd = Guice.createInjector(new DbModule(new FileDemo())).getInstance(FileDemo.class);
+//        Guice.createInjector(new DbModule(fd)).getInstance(DbDemo.class).run();
+//        Guice.createInjector(new DbModule(fd)).getInstance(FileDemo.class);
+//
+//
+//        System.out.println("_____________________________________________________________________________________________________");
+//        Guice.createInjector(new GeneratorsModule()).getInstance(FileDemo.class).rewriteDataTiDBIni("dbms" , "localhost" , "3306" , "java_pv222" , "user222", "pass222");
 
 
-        System.out.println(Guice.createInjector(new ServicesModule()).getInstance(GenCryptoSalt.class));
-        System.out.println("_____________________________________________________________________________________________________");
-
-
-
-        Map<String, String> mp = Guice.createInjector(new ServicesModule()).getInstance(FileDemo.class).connectionMap();
-
-        for(Map.Entry<String, String> entry : mp.entrySet())
-        {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
-        }
-
-
-        System.out.println("_____________________________________________________________________________________________________");
-
-        System.out.println("_____________________________________________________________________________________________________");
-        Guice.createInjector(new DbModule(new FileDemo())).getInstance(FileDemo.class);
-        Guice.createInjector(new DbModule(new FileDemo()), new ServicesModule()).getInstance(DbDemo.class).run();
-        Guice.createInjector(new DbModule(new FileDemo()), new ServicesModule()).getInstance(DbDemo.class);
-
-
-        System.out.println("_____________________________________________________________________________________________________");
-        Guice.createInjector(new GeneratorsModule()).getInstance(FileDemo.class).rewriteDataTiDBIni("dbms" , "localhost" , "3306" , "java_pv222" , "user222", "pass222");
-
-
+        AsyncDemo asyncDemo = new AsyncDemo();
+        asyncDemo.run();
     }
 }

@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d4c87b5-650e-4e37-a754-1843ead841c2" name="Changes" comment="new practive proj">
+      <change afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/Async/AsyncDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logging.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logging.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/itstep/learning/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itstep/learning/Db/DbDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/Db/DbDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itstep/learning/fs/FileDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/fs/FileDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itstep/learning/ioc/DbModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/ioc/DbModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itstep/learning/ioc/ServicesModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itstep/learning/ioc/ServicesModule.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +110,7 @@
       <workItem from="1725088946761" duration="4054000" />
       <workItem from="1725174425737" duration="3211000" />
       <workItem from="1725185711632" duration="8657000" />
-      <workItem from="1725289392273" duration="4644000" />
+      <workItem from="1725289392273" duration="11348000" />
     </task>
     <task id="LOCAL-00001" summary="new practive proj">
       <option name="closed" value="true" />
@@ -148,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725177532263</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="new practive proj">
+      <option name="closed" value="true" />
+      <created>1725297406578</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1725297406579</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,6 +161,22 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new practive proj" />
     <option name="LAST_COMMIT_MESSAGE" value="new practive proj" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/itstep/learning/Async/AsyncDemo.java</url>
+          <line>142</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/itstep/learning/Async/AsyncDemo.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PractNewProject$App.ic" NAME="App Coverage Results" MODIFIED="1725177198171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
