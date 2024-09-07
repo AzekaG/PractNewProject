@@ -1,6 +1,7 @@
 package itstep.learning.Db;
 
 import com.google.inject.Inject;
+import itstep.learning.fs.FileDemo;
 
 import java.sql.*;
 
@@ -9,6 +10,9 @@ public class DbDemo {
 
     @Inject
     private Connection connection;
+
+    @Inject
+    private FileDemo fileDemo;
 
     public void run(){
         System.out.println("Db demo");

@@ -26,8 +26,6 @@ public class AsyncDemo {
 
     public void ggg()
     {
-
-
         Runnable r = new Runnable() {
 
             @Override
@@ -37,28 +35,41 @@ public class AsyncDemo {
                 long res ;
                     synchronized(sumLocker)
                     {
-                            pandidigital = pandidigital*10 + --countThread;
+                            pandidigital = (pandidigital * 10) + --countThread;
                             localCount = countThread;
                             res = pandidigital;
                     }
-                    System.out.println( localCount + "  " + res);
                }
+       };
 
-        };
+
+        Thread[] threads = new Thread[10];
 
         for(int i = 0; i < 10; i++)
         {
-           Thread t = new Thread(r);
-           t.start();
+            threads[i] = new Thread(r);
+            threads[i].start();
         }
 
 
 
+        for (int i = 0; i < 10; i++) {
+            try
+            {
+                threads[i].join();
 
+            }
+            catch( InterruptedException ignore ) {}
+        }
 
-
+        System.out.println("RESULT : " +  countThread + "  " + pandidigital);
 
     }
+
+
+
+
+
 
 
 

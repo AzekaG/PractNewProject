@@ -104,6 +104,10 @@ public class App
 //        Guice.createInjector(new GeneratorsModule()).getInstance(FileDemo.class).rewriteDataTiDBIni("dbms" , "localhost" , "3306" , "java_pv222" , "user222", "pass222");
 
 
+        FileDemo fd = new FileDemo();
+        Guice.createInjector(new DbModule(fd)).getInstance(DbDemo.class).run();
+
+
         AsyncDemo asyncDemo = new AsyncDemo();
         asyncDemo.run();
     }
